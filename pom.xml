@@ -3,4 +3,21 @@
   <groupId>br.com.alura.listavip</groupId>
   <artifactId>listavip</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+<dependencies>
+   <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>1.5.4.RELEASE</version>
+    </dependency>
+    
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+	    <version>1.5.4.RELEASE</version>
+	</dependency>
+</dependencies>
+  
 </project>
+
