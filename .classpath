@@ -71,4 +71,6 @@
   <classpathentry kind="src" path="/enviadorEmail"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/commons/commons-email/1.4/commons-email-1.4.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/sun/mail/javax.mail/1.5.2/javax.mail-1.5.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/boot/spring-boot-starter-actuator/1.5.4.RELEASE/spring-boot-starter-actuator-1.5.4.RELEASE.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/boot/spring-boot-actuator/1.5.4.RELEASE/spring-boot-actuator-1.5.4.RELEASE.jar"/>
 </classpath>
