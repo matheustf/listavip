@@ -22,7 +22,5 @@ public class Configuracao {
 		dataSource.setUsername("root");
 		dataSource.setPassword("123456");
 		return dataSource;
-		
-
 	}
 }
