@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import br.com.alura.enviadorEmail.enviadorEmail.EmailService;
 import br.com.alura.listavip.model.Convidado;
 import br.com.alura.listavip.repository.ConvidadoRepository;
+import br.com.alura.listavip.service.ConvidadoService;
 
 @Controller
 public class ConvidadoController {
-
+	
 	@Autowired
-	ConvidadoRepository convidadoRepository;
+	ConvidadoService convidadoService;
 
 	@RequestMapping("/")
 	public String index() {
@@ -25,7 +26,7 @@ public class ConvidadoController {
 	@RequestMapping("listaconvidados")
 	public String listaConvidados(Model model) {
 
-		Iterable<Convidado> convidados = convidadoRepository.findAll();
+		Iterable<Convidado> convidados = convidadoService.obterTodosConvidados();
 
 		model.addAttribute("convidados", convidados);
 
@@ -37,11 +38,12 @@ public class ConvidadoController {
 			@RequestParam("telefone") String telefone, Model model) {
 		
 		Convidado novoConvidado = new Convidado(nome, email, telefone);
-		convidadoRepository.save(novoConvidado);
 		
-		new EmailService().enviar(nome, email);
+		convidadoService.salvarConvidado(novoConvidado);
+		
+		convidadoService.enviarEmail(nome, email);
 
-		Iterable<Convidado> convidados = convidadoRepository.findAll();
+		Iterable<Convidado> convidados = convidadoService.obterTodosConvidados();
 
 		model.addAttribute("convidados", convidados);
 
